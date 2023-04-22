@@ -1,4 +1,4 @@
-const { writeFileSync, readFileSync } = require('fs');
+const { writeFileSync } = require('fs');
 const { getData } = require('./data');
 const RFRegression = require('ml-random-forest').RandomForestRegression
 
@@ -66,10 +66,10 @@ function processData(data) {
 
   const trainingSet = new Array(dataset.length);
   const predictions = new Array(dataset.length);
-
+  
   for (let i = 0; i < dataset.length; ++i) {
     trainingSet[i] = dataset[i];
-    predictions[i] = dataset[i][11];
+    predictions[i] = dataset[i][12];
   }
   const options = {
     seed: 3,
@@ -82,6 +82,6 @@ function processData(data) {
   const regression = new RFRegression(options);
   regression.train(trainingSet, predictions);
   const model = regression.toJSON()
-  writeFileSync('./model.json', JSON.stringify(model))
+  writeFileSync('./model6.json', JSON.stringify(model))
 
 })();
