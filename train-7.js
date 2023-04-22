@@ -77,11 +77,11 @@ function processData(data) {
     replacement: false,
     nEstimators: 200
   };
-  
+  console.log('正在训练')
   // 训练模型
   const regression = new RFRegression(options);
   regression.train(trainingSet, predictions);
   const model = regression.toJSON()
   writeFileSync('./model7.json', JSON.stringify(model))
-
+  console.log('训练完成')
 })();
