@@ -72,16 +72,7 @@ function processData(data) {
   const result5 = regression5.predict(input);
   const result6 = regression6.predict(input);
   const result7 = regression7.predict(input);
-
-  console.log(result.map((item, index) => {
-    return {
-      rawData: item,
-      "[JYJ]AI_CAL[5]": result5[index],
-      "[JYJ]AI_CAL[6]": result6[index],
-      "[JYJ]AI_CAL[7]": result7[index],
-    }
-  }))
-
+  
   const csvWriter = createCsvWriter({
     path: './output.csv',
     header: [
