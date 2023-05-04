@@ -129,6 +129,7 @@ dist
 .yarn/install-state.gz
 .pnp.*
 
+script
 other
 test
 model5.json

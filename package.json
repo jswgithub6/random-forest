@@ -7,8 +7,8 @@
     "pkg": "^5.8.1"
   },
   "scripts": {
-    "train": "node train-5.js && node train-6.js && node train-7.js",
+    "train": "node train.js",
     "start": "node ./model.js",
-    "pkg": "pkg model.js --output model.exe"
+    "pkg": "pkg index.js --output model.exe"
   }
 }
